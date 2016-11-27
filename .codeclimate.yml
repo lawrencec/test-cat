@@ -1,0 +1,10 @@
+engines:
+  eslint-2:
+    enabled: true
+
+ratings:
+   paths:
+   - "lib/*.js"
+   - "*.js"
+   - "test/lib/*.js"
+   - "test/*.js"

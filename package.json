@@ -1,0 +1,100 @@
+{
+  "name": "test-cat",
+  "version": "1.0.0",
+  "description": "Searches directory for test files and renders requirejs file",
+  "main": "index.js",
+  "bin": {
+    "test-cat": "./index.js"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "help": "ls-scripts",
+    "reports:coverage": "open target/coverage/index.html",
+    "test": "NODE_ENV=dev mocha --recursive --reporter spec --ui tdd test/lib/**/*.js test/index.js",
+    "test:dev": "npm run test -- --watch",
+    "test:coverage": "NODE_ENV=dev nyc --all --reporter=lcov --reporter=text npm run test; npm run test:report",
+    "test:coverage:cc": "npm run test:coverage; codeclimate-test-reporter < target/coverage/lcov.info",
+    "test:report": "nyc report --reporter=html"
+  },
+  "keywords": [
+    "testing",
+    "test",
+    "tdd",
+    "unit",
+    "testing"
+  ],
+  "author": "Lawrence Carvalho",
+  "license": "ISC",
+  "dependencies": {
+    "cardinal": "^1.0.0",
+    "chalk": "^1.1.3",
+    "js-beautify": "^1.6.4",
+    "lodash.shuffle": "^4.2.0",
+    "rx-text-search": "^1.0.0",
+    "yargs": "^6.4.0"
+  },
+  "devDependencies": {
+    "codeclimate-test-reporter": "^0.4.0",
+    "eslint": "^3.11.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "hugs": "^1.0.2",
+    "mocha": "^3.2.0",
+    "npm-ls-scripts": "^0.1.2",
+    "nyc": "^10.0.0"
+  },
+  "config": {
+    "scripts": {
+      "lint": "Lintage",
+      "help": "List available npm run commands",
+      "reports:coverage": "Open coverage report in default browser",
+      "test": "Run tests",
+      "test:report": "Build coverage report (html)",
+      "test:unit:coverage": "Run unit tests with code coverage",
+      "test:unit:coverage:cc": "Run unit tests with code coverage and send to code climate",
+      "test:unit": "Run all unit tests"
+    }
+  },
+  "eslintConfig": {
+    "extends": "standard",
+    "parserOptions": {
+      "ecmaVersion": 6
+    },
+    "rules": {
+      "complexity": [
+        "error",
+        3
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "no-unused-vars": [
+        "error",
+        {
+          "vars": "all",
+          "args": "after-used"
+        }
+      ],
+      "consistent-return": [
+        "error",
+        {}
+      ]
+    }
+  },
+  "nyc": {
+    "lines": 80,
+    "check-coverage": true,
+    "report-dir": "./target/coverage",
+    "exclude": [
+      "node_modules",
+      "test/**/*.js",
+      "target"
+    ]
+  },
+  "greenkeeper": {
+    "ignore": []
+  }
+}
