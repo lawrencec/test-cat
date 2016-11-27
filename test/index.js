@@ -132,7 +132,7 @@ test(
           false
         );
         assert.callCount(writer.write, 0);
-        assert.calledWithExactly(logger.error, match('ARGH! TestCat encountered an error and could not continue.'));
+        assert.calledWithExactly(logger.error, match('ARGH! test-cat encountered an error and could not continue.'));
         assert.calledWith(logger.error, new Error('error output'));
       }
     );

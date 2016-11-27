@@ -36,7 +36,7 @@ module.exports = searcher.find(testDir, framework)
     }
   })
   .catch((err) => {
-    logger.error('ARGH! TestCat encountered an error and could not continue.');
+    logger.error('ARGH! test-cat encountered an error and could not continue.');
     logger.error(err);
   }
 );
