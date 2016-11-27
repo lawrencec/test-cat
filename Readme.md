@@ -2,7 +2,7 @@
 
 
 A simple utility to sniff out files that include js tests and generates a `requirejs` file for use in karma configuration.
-Test*Cat* because it hunts and leaves you a little surprise with what if finds.
+Test*Cat* because it hunts and leaves you a little surprise with what it finds.
 
 Given a directory tree like so:
 
@@ -26,9 +26,18 @@ define
     ]
   );
 ```
+
+## Install
+
+```
+npm install test-cat --save-dev
+```
+
 ## Usage
 
-```test-cat find --test-dir test --output ./specs.js --framework mocha --dry-run```
+```
+test-cat find --test-dir test --output ./specs.js --framework mocha --dry-run
+```
 
 ```
 Usage: test-cat [options]
