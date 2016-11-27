@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "Searches directory for test files and renders requirejs file",
   "main": "index.js",
+  "homepage": "https://github.com/lawrencec/test-cat",
   "bin": {
     "test-cat": "./index.js"
   },
+  "repository": "https://github.com/lawrencec/test-cat",
+  "bugs": "https://github.com/lawrencec/test-cat/issues",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
